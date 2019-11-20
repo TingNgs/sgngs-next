@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
+    "core-js": "^3.4.1",
     "next": "9.1.4",
     "next-compose": "0.0.2",
     "next-images": "^1.2.0",
