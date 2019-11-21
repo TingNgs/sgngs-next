@@ -4,19 +4,18 @@ def APP_NAME = 'sgngs'
 pipeline {
   agent any
   stages {
-    stage('Build') {steps {
-      sh 'echo ${APP_USER}'}
-      /*steps {
+    /*stage('Build') {steps {
+      steps {
         sh 'npm install'
         sh 'npm run build'
-      }*/
-    }
+      }
+    }*/
 
-    /*stage('Deploy') {
+    stage('Deploy') {
       steps {
         sh '''docker build -t ${params.APP_USER}/${params.APP_NAME}'''
         sh '''docker run -d -p 3000:3000 ${params.APP_USER}/${params.APP_NAME}:latest'''
         } 
-    }*/
+    }
   }
 }
