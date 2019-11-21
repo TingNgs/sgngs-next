@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'node:6-alpine'
+      image 'mhart/alpine-node:lastest'
       args '-p 3000:3000'
     }
 
@@ -15,10 +15,9 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh '''npm run build
-npm start
-'''
-      }
+        sh 'npm run build'
+        sh 'npm run start'
+      } 
     }
 
   }
