@@ -6,7 +6,6 @@ pipeline {
     }
 
   }
-  environment { HOME = '.' }
   stages {
     stage('Build') {
       steps {
@@ -14,5 +13,16 @@ pipeline {
       }
     }
 
+    stage('Deploy') {
+      steps {
+        sh '''npm run build
+npm start
+'''
+      }
+    }
+
+  }
+  environment {
+    HOME = '.'
   }
 }
