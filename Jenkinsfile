@@ -5,7 +5,8 @@ def CONTAINER_NAME = 'sgngs_container'
 pipeline {
   agent any
   stages {
-    stage('Test') {
+    stage('Test') { 
+      agent { docker 'mhart/alpine-node' }
       steps {
         sh 'npm install'
         sh 'npm run build'
