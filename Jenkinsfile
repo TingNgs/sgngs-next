@@ -5,7 +5,7 @@ def CONTAINER_NAME = 'sgngs_container'
 pipeline {
   agent any
   stages {
-    stage('Test') {steps {
+    stage('Test') {
       steps {
         sh 'npm install'
         sh 'npm run build'
