@@ -6,7 +6,10 @@ pipeline {
   agent any
   stages {
     stage('Test') { 
-      agent { docker 'mhart/alpine-node' }
+      agent { 
+        image 'mhart/alpine-node'
+        args '-p 3000:3000' 
+      }
       steps {
         sh 'npm install'
         sh 'npm run build'
