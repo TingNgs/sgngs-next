@@ -4,8 +4,8 @@ def APP_NAME = 'sgngs'
 pipeline {
   agent any
   stages {
-    stage('Build') {
-      sh 'echo ${APP_USER}'
+    stage('Build') {steps {
+      sh 'echo ${APP_USER}'}
       /*steps {
         sh 'npm install'
         sh 'npm run build'
