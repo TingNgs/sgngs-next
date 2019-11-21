@@ -20,6 +20,9 @@ pipeline {
         sh 'rm -r ./.next'
         sh 'rm -r ./node_modules'
         cleanWs()
+        dir("${workspace}@tmp") {
+          deleteDir()
+        }
       }
     }
 
@@ -29,7 +32,10 @@ pipeline {
         sh "docker build -t ${APP_USER}/${APP_NAME} ."
         sh "docker run -d -p 3000:3000 --name ${CONTAINER_NAME} ${APP_USER}/${APP_NAME}:latest"
         cleanWs()
-        } 
+        dir("${workspace}@tmp") {
+          deleteDir()
+        }
+      } 
     }
   }
   post {
