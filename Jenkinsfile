@@ -13,8 +13,8 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh '''docker build -t ${ECR}/${APP_NAME}'''
-        sh '''docker run -d -p 3000:3000 ${ECR}/${APP_NAME}:latest'''
+        sh '''docker build -t ${USER}/${APP_NAME}'''
+        sh '''docker run -d -p 3000:3000 ${USER}/${APP_NAME}:latest'''
         } 
     }
   }
