@@ -5,14 +5,14 @@ def CONTAINER_NAME = 'sgngs_container'
 pipeline {
   agent any
   stages {
-    /*stage('Test') {steps {
+    stage('Test') {steps {
       steps {
         sh 'npm install'
         sh 'npm run build'
         sh 'rm -r ./.next'
         sh 'rm -r ./node_modules'
       }
-    }*/
+    }
 
     stage('Deploy') {
       steps {
