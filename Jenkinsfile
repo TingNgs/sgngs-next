@@ -1,3 +1,6 @@
+USER = "tingngs"
+APP_NAME = "sgngs"
+
 pipeline {
   agent any
   stages {
@@ -8,12 +11,11 @@ pipeline {
       }
     }
 
-  stage('Deploy') {
-    steps {
-      sh 'npm run start'
-      } 
+    stage('Deploy') {
+      steps {
+        sh '''docker build -t ${ECR}/${APP_NAME}'''
+        sh '''docker run -d -p 3000:3000 ${ECR}/${APP_NAME}:latest'''
+        } 
     }
-
   }
-
 }
