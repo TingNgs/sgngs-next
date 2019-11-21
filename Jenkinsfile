@@ -10,7 +10,7 @@ pipeline {
         docker {
           image 'mhart/alpine-node'
           args '-p 3000:3000'
-    }	    } 
+    	    } 
       }
       steps {
         sh 'npm install'
