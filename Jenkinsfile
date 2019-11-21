@@ -13,8 +13,8 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh '''docker build -t ${params.APP_USER}/${params.APP_NAME}'''
-        sh '''docker run -d -p 3000:3000 ${params.APP_USER}/${params.APP_NAME}:latest'''
+        sh '''docker build -t ${APP_USER}/${APP_NAME}'''
+        sh '''docker run -d -p 3000:3000 ${APP_USER}/${APP_NAME}:latest'''
         } 
     }
   }
