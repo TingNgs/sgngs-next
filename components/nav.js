@@ -12,7 +12,6 @@ const links = [
 });
 
 const Nav = () => {
-  console.log(styles);
   return (
     <nav className={styles.test}>
       <ul>
