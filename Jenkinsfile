@@ -11,6 +11,9 @@ pipeline {
           image 'mhart/alpine-node'
     	    } 
       }
+      environment {
+        HOME = '.'
+      }
       steps {
         sh 'npm install'
         sh 'npm run build'
