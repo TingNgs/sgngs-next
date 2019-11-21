@@ -1,4 +1,4 @@
-def APP_USER = 'TingNgs'
+def APP_USER = 'tingngs'
 def APP_NAME = 'sgngs'
 
 pipeline {
