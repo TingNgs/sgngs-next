@@ -16,8 +16,10 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        sh "docker stop ${CONTAINER_NAME} || true && docker rm ${CONTAINER_NAME} || true"
-        sh "docker build -t ${APP_USER}/${APP_NAME} --rm ."
+        sh "docker stop ${CONTAINER_NAME} || true && docker rm ${CONTAINER_NAME} || true &&
+        docker rmi ${APP_USER}/${APP_NAME}
+"
+        sh "docker build -t ${APP_USER}/${APP_NAME} ."
         sh "docker run -d -p 3000:3000 --name ${CONTAINER_NAME} ${APP_USER}/${APP_NAME}:latest"
         } 
     }
