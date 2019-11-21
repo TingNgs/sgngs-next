@@ -1,27 +1,19 @@
 pipeline {
-  agent {
-    docker {
-      image 'mhart/alpine-node'
-      args '-p 3000:3000'
-    }
-
-  }
+  agent any
   stages {
     stage('Build') {
       steps {
         sh 'npm install'
+        sh 'npm run build'
       }
     }
 
-    stage('Deploy') {
-      steps {
-        sh 'npm run build'
-        sh 'npm run start'
+  stage('Deploy') {
+    steps {
+      sh 'npm run start'
       } 
     }
 
   }
-  environment {
-    HOME = '.'
-  }
+
 }
