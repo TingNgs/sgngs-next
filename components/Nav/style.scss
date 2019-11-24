@@ -1,0 +1,33 @@
+$progess_bar_bg: gray;
+
+.nav {
+  position: fixed;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  min-height: 50%;
+}
+
+.nav_items {
+  flex-grow: 1;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav_icon {
+  width: 2em;
+  height: 2em;
+  margin-right: 5px;
+}
+
+.progress_bar_container {
+  margin: 5px 20px;
+  width: 0.3em;
+  min-height: 5em;
+  flex-grow: 1;
+  transform: translateX(-50%);
+  background-color: $progess_bar_bg;
+}

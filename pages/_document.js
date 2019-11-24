@@ -11,7 +11,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           {/* Global css settings */}
-          <style jsx global>{`
+          <style>{`
             body,
             div,
             ul,
@@ -67,29 +67,23 @@ export default class MyDocument extends Document {
             }
             html {
               font-size: 10px;
+              min-height: 100vh;
             }
             html body {
-              background: #232323;
               background-size: cover;
-              font-family: Helvetica, Arial, sans-serif;
               font-size: 14px;
-              line-height: 1;
-              color: #2e2e2e;
               -webkit-font-smoothing: antialiased;
               -moz-osx-font-smoothing: grayscale;
+              min-height: 100vh;
             }
             html body a,
             html body a:active,
             html body a:hover {
-              color: #2e2e2e;
               cursor: pointer;
               text-decoration: none;
             }
             html body iframe {
               border: 0;
-            }
-            html body .text-uppercase {
-              text-transform: uppercase;
             }
             ul,
             ol,
@@ -111,23 +105,6 @@ export default class MyDocument extends Document {
             }
             button:focus {
               outline: none;
-            }
-            .backgroundOther {
-              background-repeat: no-repeat;
-              background-position: center center;
-              background-size: cover;
-            }
-            @font-face {
-              font-family: Helvetica.ttc;
-              src: url(../static/font/Helvetica.ttc) format("opentype");
-            }
-            @font-face {
-              font-family: Bradley-Hand-Bold.ttf;
-              src: url(../static/font/BradleyHand-Bold.ttf) format("opentype");
-            }
-            @font-face {
-              font-family: Impact.ttf;
-              src: url(../static/font/Impact.ttf) format("opentype");
             }
           `}</style>
         </Head>
