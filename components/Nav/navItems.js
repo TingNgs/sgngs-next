@@ -4,7 +4,7 @@ import styles from "./style.scss";
 
 const NavItems = ({ icon, title }) => {
   return (
-    <a href="#" className={styles.nav_items_link}>
+    <a href={`#${title}`} className={styles.nav_items_link}>
       <div className={styles.nav_items}>
         <img
           className={styles.nav_icon}
