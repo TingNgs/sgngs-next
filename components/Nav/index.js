@@ -19,6 +19,7 @@ const Nav = () => {
           </React.Fragment>
         );
       })}
+      <div className={styles.mobile_burger}></div>
     </div>
   );
 };
